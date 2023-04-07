@@ -1,5 +1,4 @@
 /*
- Name: Natnael Gebremariam
  Description: Create and navigate to find the
               longest zig zag path in a binary tree
  Input: Binary tree string 
@@ -21,11 +20,12 @@ binTree::~binTree()
 }
 void binTree::deallocateTree(binTreeNode* r)
 {
+    //deallocate memory pre-order 
     if(r == nullptr) return; 
     deallocateTree(r->left);
     deallocateTree(r->right); 
     delete r; 
-    //return; 
+
 
 }
 void binTree::buildTree(std::vector<std::string> locations)
@@ -107,6 +107,7 @@ std::vector<std::string> path)
     }
     return altPath; 
 }
+//below is another way to to implimant to code with a sub-division of left and right vectors
 // std::vector<std::string> binTree::zigzag(binTreeNode* r, bool childType, 
 // std::vector<std::string> path)
 // {
